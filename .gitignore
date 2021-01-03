@@ -2,3 +2,5 @@
 *.exe
 *.o
 *.bin
+**/.cph
+**/.vscode
