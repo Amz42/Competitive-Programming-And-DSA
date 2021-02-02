@@ -1,4 +1,5 @@
 # Competitive Programming And DSA
+
 ### Content:
 - Competitive Programming
     - CodeForces
@@ -7,6 +8,7 @@
     - LeetCode
 - Data Structures & Algorithms
     - 450 DSA | Love Babbar Sheet
+
 ### My Profile:
 | Platform      | Link |
 | ------        | ------ |
@@ -16,3 +18,5 @@
 | LeetCode      | [Amz42](https://leetcode.com/Amz42/) |
 | GeeksForGeeks | [amanguptarkg6](https://auth.geeksforgeeks.org/user/amanguptarkg6/profile) |
 | StopStalk     | [Amz42](https://www.stopstalk.com/user/profile/Amz42) |
+
+> "Fool me once, shame on you. Fool me twice, you can't get fooled again."
