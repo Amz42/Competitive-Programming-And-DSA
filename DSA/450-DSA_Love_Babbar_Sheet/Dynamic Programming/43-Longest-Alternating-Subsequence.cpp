@@ -1,7 +1,6 @@
 // Question: https://practice.geeksforgeeks.org/problems/longest-alternating-subsequence/0
-// Solution: https://practice.geeksforgeeks.org/viewSol.php?subId=210d3a5b0394409de48577087b110b84&pid=705274&user=amanguptarkg6
-
-
+// Solution1: https://practice.geeksforgeeks.org/viewSol.php?subId=210d3a5b0394409de48577087b110b84&pid=705274&user=amanguptarkg6
+// Solution2: https://practice.geeksforgeeks.org/viewSol.php?subId=fb064f82f1ab9d026696a6b27f239b54&pid=705274&user=amanguptarkg6
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -33,6 +32,23 @@ class Solution {
 		    return answer;
 		}
 };
+
+class Solution2{
+	public:
+		int AlternatingaMaxLength(vector<int>&nums){
+		    int inc = 1;
+		    int dec = 1;
+		    
+		    for(int i=1;i<nums.size();i++){
+		        if(nums[i-1]<nums[i]) inc = dec+1;
+		        if(nums[i-1]>nums[i]) dec = inc+1;
+		    }
+		    
+		    return max(inc, dec);
+		}
+
+};
+
 
 // { Driver Code Starts.
 int main(){
