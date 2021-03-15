@@ -26,6 +26,49 @@ class Solution{
     }
 };
 
+// VVVVVVVVVVVV      IMPORTANT
+//////////////////////////////////////////////////////////////////////////   Solution 2
+//////////////////////////////////////////////////////////////////////////   O(log(n+m))
+class Solution2{
+    public:
+    
+    int kth(int k, int al, int ar, int bl, int br, int a[], int b[]){
+        if(al >= ar) return b[bl+k]; // no element left in a[]
+        if(bl >= br) return a[al+k]; // no element left in b[]
+        
+        int midA = (ar-al) / 2;
+        int midB = (br-bl) / 2;
+        
+        if(midA + midB < k){ // k exist in right part
+            
+            // left part of b[] is discarded
+            if(a[al+midA] > b[bl+midB])
+                return kth(k - (midB+1), al, ar, bl+midB+1, br, a, b);
+                
+            // left part of a[] is discarded
+            else 
+                return kth(k - (midA+1), al+midA+1, ar, bl, br, a, b);
+            
+        }else{ // k exist in left part
+            
+            // right part of a[] is discarded
+            if(a[al+midA]>b[bl+midB])
+                return kth(k, al, al+midA, bl, br, a, b);
+             
+             // right part of b[] is discarded
+            else
+                return kth(k, al, ar, bl, bl+midB, a, b);
+        }
+    }
+    
+    int kthElement(int arr1[], int arr2[], int n, int m, int k){
+        return kth(k-1, 0, n, 0, m, arr1, arr2);
+    }
+};
+//////////////////////////////////////////////////////////////////////////   O(log(n+m))
+//////////////////////////////////////////////////////////////////////////   Solution 2
+// VVVVVVVVVVVV      IMPORTANT
+
 int main(){
 	int t; cin>>t; while(t--){
 		int n,m,k; cin>>n>>m>>k;
