@@ -8,6 +8,7 @@
     - LeetCode
 - Data Structures & Algorithms
     - 450 DSA | Love Babbar Sheet
+    - Dynamic Programming Decoded | Riddhi Dutta Sheet
 
 ### My Profile:
 | Platform      | Link |
