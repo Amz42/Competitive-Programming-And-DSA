@@ -1,0 +1,64 @@
+// Question: https://leetcode.com/problems/house-robber/
+// (Recursive) Solution1: https://leetcode.com/submissions/detail/414415503/
+// (Iterative) Solution2: https://leetcode.com/submissions/detail/473009541/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////    Recursive
+/////////////////////////////////////////////////////////////////////////////////////////////
+class Solution1 {
+public:
+    
+    int dp[100][2];
+    
+    int fundp(int index, bool canrob, int n, vector<int>& nums){
+        if(index>=n) return 0;
+        if(dp[index][canrob]!=-1) return dp[index][canrob];
+        
+        // will not rob
+        int x = fundp(index+1, true, n, nums);
+        
+        // will rob
+        int y = 0;
+        if(canrob) y = fundp(index+1, false, n, nums) + nums[index];
+        
+        return dp[index][canrob] = max(x,y);
+    }
+    
+    int rob(vector<int>& nums) {
+        memset(dp, -1, sizeof(dp));
+        return fundp(0, true, nums.size(), nums);
+    }
+};
+/////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////    Recursive
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////    Iterative
+/////////////////////////////////////////////////////////////////////////////////////////////
+class Solution2 {
+public:
+    int rob(vector<int>& nums) {
+        int n = nums.size();
+        if(n==1) return nums[0];
+        
+        int dp[101];
+        dp[0] = nums[0]; dp[1] = max(nums[0], nums[1]);
+        
+        for(int i=2; i<n; i++) dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
+        
+        return dp[n-1];
+    }
+};
+/////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////    Iterative
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+int main(){
+    return 0;
+}
