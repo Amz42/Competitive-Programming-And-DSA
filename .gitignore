@@ -5,3 +5,9 @@
 **/.cph
 **/.vscode
 **.zip
+**.catalyst
+main.cpp
+main2.cpp
+main.py
+**.exe
+**.o
