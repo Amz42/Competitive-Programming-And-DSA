@@ -8,7 +8,24 @@
     - LeetCode
 - Data Structures & Algorithms
     - 450 DSA | Love Babbar Sheet
+        - Array
+        - Binary Search Trees
+        - Binary Trees
+        - Bit Manipulation
+        - Dynamic Programming
+        - Graphs
+        - Greedy
+        - Heap
+        - Matrix
+        - Searching & Sorting
+        - Stack & Queue
+        - String
+        - Trie
     - Dynamic Programming Decoded | Riddhi Dutta Sheet
+        - 1D - DP
+        - 2D - DP
+        - Matrix - DP
+        - String - DP
 
 ### My Profile:
 | Platform      | Link |
