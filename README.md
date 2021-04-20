@@ -2,9 +2,11 @@
 
 ### Content:
 - Competitive Programming
-    - CodeForces
-    - CodeChef
     - AtCoder
+    - CodeChef
+    - CodeForces
+    - Google KickStart
+    - HackerEarth
     - LeetCode
 - Data Structures & Algorithms
     - 450 DSA | Love Babbar Sheet
@@ -26,6 +28,7 @@
         - 2D - DP
         - Matrix - DP
         - String - DP
+    - GeeksForGeeks
 
 ### My Profile:
 | Platform      | Link |
