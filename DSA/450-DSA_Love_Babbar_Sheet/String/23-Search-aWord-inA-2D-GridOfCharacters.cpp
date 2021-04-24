@@ -1,5 +1,6 @@
 // Question: https://practice.geeksforgeeks.org/problems/find-the-string-in-grid/0
-// Solution: https://practice.geeksforgeeks.org/viewSol.php?subId=0a141a211ea1b03c0f1d3374bb67ab6a&pid=1871&user=amanguptarkg6
+// Solution1: https://practice.geeksforgeeks.org/viewSol.php?subId=0a141a211ea1b03c0f1d3374bb67ab6a&pid=1871&user=amanguptarkg6
+// Solution2: https://practice.geeksforgeeks.org/viewSol.php?subId=0f9acf5a623168ac2c26becc878e52c1&pid=705651&user=amanguptarkg6
 
 #include<bits/stdc++.h>
 #define optimize ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
@@ -62,3 +63,60 @@ int main(){
 	}
 	return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////    Solution 2
+/////////////////////////////////////////////////////////////////////////////////////////
+class Solution {
+    int dir[8][2] = {
+        { -1, -1}, // up-left
+        { -1,  0}, // up
+        { -1, +1}, // up-right
+        {  0, +1}, // right
+        { +1, +1}, // down-right
+        { +1,  0}, // down
+        { +1, -1}, //down-left
+        {  0, -1} // left
+    };
+    bool valid(int i, int j, int n, int m){
+        return !(i<0 || j<0 || i>=n || j>=m);
+    }
+public:
+	vector<vector<int>>searchWord(vector<vector<char>>grid, string word){
+	    int n = grid.size();
+	    int m = grid[0].size();
+	    
+	    vector<vector<int>> answer;
+	    
+	    for(int i=0;i<n;i++){
+	        for(int j=0;j<m;j++){
+	            
+	            for(int k=0;k<8;k++){ // selecting a particular direction
+	                int x = i, y = j, p = 0;
+	                bool found = true;
+	                while(true){
+	                    if(p==word.size()) break;
+	                    if(!valid(x,y,n,m) || word[p] != grid[x][y]){
+	                        found = false;
+	                        break;
+	                    }
+	                    p++;
+	                    x += dir[k][0];
+	                    y += dir[k][1];
+	                }
+	                
+	                if(found){
+	                    answer.push_back({i, j});
+	                    break;
+	                }
+	            }
+	            
+	        }
+	    }
+	    
+	    return answer;
+	}
+};
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////    Solution 2
+/////////////////////////////////////////////////////////////////////////////////////////
