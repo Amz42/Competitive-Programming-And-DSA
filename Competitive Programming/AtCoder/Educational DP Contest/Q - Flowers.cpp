@@ -1,0 +1,90 @@
+// Question: https://atcoder.jp/contests/dp/tasks/dp_q
+// Solution: https://atcoder.jp/contests/dp/submissions/22680948
+
+/*                                              _                    _  _  ____
+                                               / \   _ __ ___  ____ | || ||___ \
+                                              / _ \ | '_ ` _ \|_  / | || |_ __) |
+                                             / ___ \| | | | | |/ /  |__   _/ __/
+                                            /_/   \_\_| |_| |_/___|    |_||_____|
+*/
+#include <bits/stdc++.h>
+#define ll          long long
+#define pb          push_back
+#define mkpr        make_pair
+#define NL          cout<<"\n";
+#define optimize    ios::sync_with_stdio(0);cin.tie(0);
+#define fori(a,n)   for(ll int i=a;i<(ll int)n;i++)
+#define forj(a,n)   for(ll int j=a;j<(ll int)n;j++)
+#define MOD         (int)(1e9+7)
+#define ten5        (int)(1e5)
+#define all(v)      v.begin(),v.end()
+#define sort_d(v)   sort(all(v),greater<ll int>());
+#define maxv(v)     *max_element(all(v))
+using namespace std;
+
+
+
+
+
+
+void solve(int tc) {
+    int n; cin >> n;
+    ll int height[n], beauty[n];
+    fori(0, n) cin >> height[i];
+    fori(0, n) cin >> beauty[i];
+
+    ll int answer = 0;
+    map<ll int, ll int> mp;
+
+    for (int i = 0; i < n; i++) {
+        ll int curr_h = height[i];
+        ll int curr_b = beauty[i];
+
+        // if flower with just lower height exists then
+        // add its beauty in current flower
+        auto it = mp.lower_bound(curr_h);
+        if (it != mp.begin()) {
+            --it;
+            curr_b += (*it).second;
+        }
+
+        // add current flower to collection
+        mp[curr_h] = curr_b;
+
+        // remove all other flowers having greater height & beauty <= current flower
+        it = mp.upper_bound(curr_h);
+        while (it != mp.end() && (*it).second <= curr_b) {
+            auto tmp = it; tmp++;
+            mp.erase(it);
+            it = tmp;
+        }
+
+        answer = max(answer, curr_b);
+    }
+
+    cout << answer;
+}
+
+
+
+
+
+
+int main() {
+    optimize
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+
+    long long int tests = 1;
+
+    // cin >> tests;
+
+    for (ll int test_case = 1; test_case <= tests; test_case++) {
+        solve(test_case);
+    }
+
+    // cerr << "Execution Time : " << (float)clock() / CLOCKS_PER_SEC << " secs" << endl;
+    return 0;
+}
