@@ -1,10 +1,11 @@
 // Question: https://leetcode.com/problems/rotate-image/
-// Solution: https://leetcode.com/submissions/detail/491170714/
+// Solution-1: https://leetcode.com/submissions/detail/491170714/
+// Solution-2: https://leetcode.com/submissions/detail/497964925/
 
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution1 {
 public:
     void rotate(vector<vector<int>>& m) {
         int n = m.size();
@@ -27,6 +28,30 @@ public:
             }
             n-=2;
         }
+    }
+};
+
+class Solution2 {
+    void reverse(vector<int>& v){
+        int n = v.size();
+        
+        int l = 0, r = n-1;
+        while(l<r)
+            swap(v[l++], v[r--]);
+    }
+public:
+    void rotate(vector<vector<int>>& matrix) {
+        int n = matrix.size();
+        
+        // finding the transpose of matrix
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                swap(matrix[i][j], matrix[j][i]);
+            }
+        }
+        
+        for(int i=0;i<n;i++)
+            reverse(matrix[i]);
     }
 };
 
