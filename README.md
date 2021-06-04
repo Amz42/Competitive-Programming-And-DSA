@@ -10,9 +10,11 @@
     - LeetCode
 - Data Structures & Algorithms
     - 450 DSA | Love Babbar Sheet
-    - Dynamic Programming Decoded | Riddhi Dutta Sheet
     - Coding Ninja's - HackWithInfy Preparation Path
+    - Dynamic Programming Decoded | Riddhi Dutta Sheet
     - GeeksForGeeks
+    - LeetCode Patterns Sheet
+    - Sorting Algorithms
 
 ### My Profile:
 | Platform      | Link |
