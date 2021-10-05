@@ -13,8 +13,11 @@
     - Coding Ninja's - HackWithInfy Preparation Path
     - Dynamic Programming Decoded | Riddhi Dutta Sheet
     - GeeksForGeeks
+    - Graph Algorithms
     - LeetCode Patterns Sheet
+    - Number Theory Algorithms
     - Sorting Algorithms
+    - String Algorithms
 
 ### My Profile:
 | Platform      | Link |
