@@ -2,6 +2,7 @@
 
 [Question](https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1#)
 | [Solution](https://practice.geeksforgeeks.org/viewSol.php?subId=13d62ccc846e21c0d7aaee0f9955a1ca&pid=700192&user=amanguptarkg6)
+| [Article](https://www.geeksforgeeks.org/flattening-a-linked-list/)
 
 ##### C++
 ```c++
