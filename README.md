@@ -8,6 +8,7 @@
     - Google KickStart
     - HackerEarth
     - LeetCode
+    - SPOJ
 - Data Structures & Algorithms
     - 450 DSA | Love Babbar Sheet
     - Coding Ninja's - HackWithInfy Preparation Path
