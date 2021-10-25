@@ -1,12 +1,9 @@
-// Finding Bridges in a Graph
+### Finding Bridges in a Graph
 
-#include <bits/stdc++.h>
-using namespace std;
+[CP-Algorithms Article Link](https://cp-algorithms.com/graph/bridge-searching.html)
 
-
-
-
-
+##### C++
+```c++
 const int NODES = 1e5+1;
 bool visited[NODES];
 int in_time[NODES], low_time[NODES];
@@ -23,18 +20,15 @@ void dfs(int node, int parent){
             low_time[node] = min(low_time[node], in_time[child]);
         }else{
             dfs(child, node);
-            if(low_time[node]<low_time[child])
+            if(in[node] < low_time[child])
                 cout << "BRIDGE: " << node << " -> " << child << endl;
             low_time[node] = min(low_time[node], low_time[child]);
         }
     }
 }
+```
 
+##### Related Question
 
-
-
-
-
-int main(){
-    return 0;
-}
+[LeetCode 1192. Critical Connections in a Network](https://leetcode.com/problems/critical-connections-in-a-network/)
+| [Solution](https://leetcode.com/submissions/detail/577083584/)
