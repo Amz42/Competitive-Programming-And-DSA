@@ -1,9 +1,6 @@
-### GeeksForGeeks - Height of Binary Tree
+## [GeeksForGeeks - Height of Binary Tree](https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1/#)
 
-[Question](https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1/#)
-| [Solution](https://practice.geeksforgeeks.org/viewSol.php?subId=1ef6d9cdb9741b0acfd597c2b3811710&pid=700164&user=amanguptarkg6)
-
-##### C++
+### Solution 1: C++ - Inorder traversal (DFS)
 ```c++
 class Solution{
     int BTreeHeight;
@@ -22,4 +19,19 @@ public:
         return BTreeHeight;
     }
 };
+```
+
+### Solution 2: Java - Inorder traversal (DFS)
+```java
+class Solution {
+    int height(Node node) {
+        if(node == null)
+            return 0;
+        
+        int left = height(node.left);
+        int right = height(node.right);
+        
+        return 1 + Math.max(left, right);
+    }
+}
 ```
