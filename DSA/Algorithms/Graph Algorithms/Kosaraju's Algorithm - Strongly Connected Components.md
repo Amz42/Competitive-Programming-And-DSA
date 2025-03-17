@@ -1,8 +1,11 @@
-// Kosaraju's Algorithm for Strongly Connected Components
+## Kosaraju's Algorithm for Strongly Connected Components
 
-#include <bits/stdc++.h>
-using namespace std;
+#### What is a Strongly Connected Component (SCC) ?
+> In a SCC, for any pair of vertices (𝑢,𝑣) within that component, there's a directed path from 
+𝑢 to 𝑣 and a directed path from 𝑣 to 𝑢.
 
+#### C++ Code:
+```c++
 const int NODES = 1000;
 vector<int> order;
 vector<int> adj[NODES];              // normal graph
@@ -63,10 +66,4 @@ void KOSARAJUS_ALGORITHM(){
         }
     }
 }
-
-
-
-int main(){
-    KOSARAJUS_ALGORITHM();
-    return 0;
-}
+```
